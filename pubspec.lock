@@ -87,7 +87,7 @@ packages:
     source: hosted
     version: "3.0.2"
   flutter_secure_storage:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_secure_storage
       sha256: f2afec1f1762c040a349ea2a588e32f442da5d0db3494a52a929a97c9e550bc5
@@ -209,7 +209,7 @@ packages:
     source: hosted
     version: "1.11.0"
   path:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: path
       sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
@@ -257,7 +257,7 @@ packages:
     source: hosted
     version: "2.1.8"
   shared_preferences:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: shared_preferences
       sha256: d3bbe5553a986e83980916ded2f0b435ef2e1893dfaa29d5a7a790d0eca12180
@@ -326,7 +326,7 @@ packages:
     source: hosted
     version: "1.10.0"
   sqflite:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: sqflite
       sha256: a43e5a27235518c03ca238e7b4732cf35eabe863a369ceba6cbefa537a66f16d
@@ -342,7 +342,7 @@ packages:
     source: hosted
     version: "2.5.4"
   sqflite_common_ffi:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: sqflite_common_ffi
       sha256: "4d6137c29e930d6e4a8ff373989dd9de7bac12e3bc87bce950f6e844e8ad3bb5"
