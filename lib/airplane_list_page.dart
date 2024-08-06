@@ -130,9 +130,50 @@ class _AirplaneListPageState extends State<AirplaneListPage> {
     _refreshAirplaneList();
   }
 
+  void _showInstructions() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Instructions'),
+          content: Text(
+              'To use this page:\n\n'
+                  '1. Add a new airplane using the "Add Airplane" button.\n'
+                  '2. Edit an airplane by tapping the edit icon next to the airplane in the list.\n'
+                  '3. Delete an airplane by tapping the delete icon next to the airplane in the list.\n'
+                  '4. To see details of an airplane, just tap on the airplane item.\n\n'
+                  'All changes will be saved in the database and will persist even after the app is closed.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Airplane List'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop(); // Navigates back to the previous screen
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: _showInstructions, // Show instructions dialog
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           Column(
@@ -160,9 +201,10 @@ class _AirplaneListPageState extends State<AirplaneListPage> {
                     final airplane = _airplanes[index];
                     return ListTile(
                       title: Text(airplane.type),
-                      subtitle: Text('Passengers: ${airplane.numberOfPassengers}, '
-                          'Max Speed: ${airplane.maxSpeed} km/h, '
-                          'Range: ${airplane.range} km'),
+                      subtitle: Text(
+                          'Passengers: ${airplane.numberOfPassengers}, '
+                              'Max Speed: ${airplane.maxSpeed} km/h, '
+                              'Range: ${airplane.range} km'),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
