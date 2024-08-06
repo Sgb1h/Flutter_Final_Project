@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'airplane.dart';
 import 'database_helper.dart';
+import 'Homepage.dart'; // Import HomePage
 
 class AirplaneListPage extends StatefulWidget {
   @override
@@ -164,7 +165,11 @@ class _AirplaneListPageState extends State<AirplaneListPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop(); // Navigates back to the previous screen
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+                  (Route<dynamic> route) => false,
+            ); // Navigates back to the HomePage and clears the stack
           },
         ),
         actions: [
